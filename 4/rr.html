@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow-y: hidden;
+            background-color: gray;
+            background-image: url(https://cdn.pixabay.com/animation/2023/03/19/02/34/02-34-11-741_512.gif);
+
+        }
+
+        #center {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            border-radius: 20px;
+background-image: url(https://i.pinimg.com/originals/55/c2/87/55c287196dc9f1c88c072d806451e20d.gif);
+background-position: center;
+            border: 2px solid green;
+        }
+
+        .imgdiv {
+            position: absolute;
+            width: 190px;
+            /* overflow: hidden; */
+            height: 200px;
+            /* background-color: palevioletred; */
+            border-radius: 20px;
+        }
+
+        .imgdiv img {
+            /* transform: translateY(100%); */
+            border-radius: 20px;
+            width: 100%;
+            /* height: 100%; */
+            object-fit: cover;
+        }
+    </style>
+    <title>Title Nahi hai 😥😥</title>
+</head>
+
+<body>
+    <div id="center">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Throttling Function
+        const throttleFunction = (func, delay) => {
+            let prev = 0;
+            return (...args) => {
+                let now = new Date().getTime();
+                if (now - prev > delay) {
+                    prev = now;
+                    return func(...args);
+                }
+            }
+        }
+
+        document.querySelector("#center").addEventListener("mousemove", throttleFunction((dets) => {
+
+
+            //your less repeatation code 
+
+            var div = document.createElement("div")
+            div.classList.add("imgdiv")
+            div.style.left = dets.x + "px"
+            div.style.top = dets.y + "px"
+
+
+            var img = document.createElement("img")
+           
+            
+             var imgs = ["https://i.gifer.com/XOsX.gif","https://clipart-library.com/images/BTaropdpc.gif","https://media3.giphy.com/media/9uxiFZGNKxTJ9Q4f4x/giphy.gif?cid=6c09b9526dzqxrsfxdzzut80b82fml0qzhplq0fcg5ke9qgx&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s","https://img1.picmix.com/output/stamp/normal/9/9/1/4/1354199_7ec3c.gif","https://i.redd.it/jvujfnh7mfi51.gif","https://gifdb.com/images/high/cartoon-alien-dancing-transparent-sticker-wt81uw1mcqwwfeei.gif","https://i.gifer.com/embedded/download/YaDQ.gif","https://i.gifer.com/X5Nj.gif","https://media0.giphy.com/media/WgsVx6C4N8tjy/200w.gif?cid=6c09b952li1p4a76ap4j2lnyaizlpbsfbid3jev1uxhwlc5e&ep=v1_gifs_search&rid=200w.gif&ct=s","https://www.icegif.com/wp-content/uploads/2022/01/icegif-1479.gif","https://acegif.com/wp-content/uploads/2021/4fh5wi/troll-face-26.gif"];
+
+            function random_item(item) {
+                return item[Math.floor(Math.random() * imgs.length)];
+                // console.log(random_item(imgs));
+            }
+
+
+            img.setAttribute("src", `${random_item(imgs)}`)
+            div.appendChild(img)
+            gsap.from(img, {
+                y: "-50",
+                ease: Power3,
+                duration: .3
+            })
+
+            gsap.to(img, {
+                y: "100%",
+                opacity: 0,
+                ease: Power4,
+                delay: 0.4
+            })
+
+
+            document.body.appendChild(div)
+            setTimeout(() => {
+                div.remove()
+            }, 1000)
+        }, 200))
+
+
+    </script>
+</body>
+
+</html>
