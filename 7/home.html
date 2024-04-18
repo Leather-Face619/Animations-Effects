@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+*::selection{
+    color: rgb(49, 49, 49);
+
+    background-color:rgb(202, 202, 202);
+}
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            color: rgb(202, 202, 202);
+            cursor:none;
+        }
+
+        #main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+  h1{
+    font-size: 15vw;
+  }
+        #curser {
+            width: 5vw;
+            height: 5vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            transition: all linear 0.7s;
+           
+            mix-blend-mode:difference;
+        }
+    </style>
+    <title>mouse pointer</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="curser">
+
+        </div>
+        <h1>Html hu mai</h1>
+    </div>
+    <script>
+  var main = document.querySelector("#main")
+  var cur = document.querySelector("#curser")
+
+  main.addEventListener("mousemove",function (po) {
+    // console.log(po.x+"x "+po.y+"y")
+    var dx = po.x-9
+    var dy = po.y-7
+    cur.style.left= dx+"px"
+    cur.style.top= dy+"px"
+  })
+    </script>
+</body>
+
+</html>
