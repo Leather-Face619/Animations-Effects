@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+
+}
+
+#page1,
+#page2,
+#page3 {
+  
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+
+}
+
+#page2 {
+    font-family: "Sedgwick Ave Display", cursive;
+    font-weight: 100;
+    overflow: hidden;
+}
+
+#move{
+    background-color: #d9ff06;
+    display: flex;
+}
+#marque {
+    display: flex;
+    padding: 5vw 1vw;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: 2vw;
+    transform: translateX(-100%);
+}
+
+#page2 img {
+    width: 8vw;
+   
+    
+}
+
+#page2 h1 {
+    text-wrap: nowrap;
+    display: inline-block;
+    padding-right: 20px;
+}
