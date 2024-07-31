@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /* background-color: black; */
+    background-image: url(https://cdn.pixabay.com/animation/2023/03/19/02/34/02-34-11-741_512.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.stripe {
+    position: relative;
+    border-top: 1px solid rgb(34, 34, 34);
+    border-bottom: 1px solid rgb(34, 34, 34);
+    width: 100vw;
+    padding: 3.6vh 0px;
+    overflow: hidden;
+    cursor: none;
+}
+
+.cnt {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.bgcnt {
+    width: fit-content;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    opacity: 0;
+}
+
+.elem {
+    margin: 0.4vw;
+    /* background-color: gold; */
+    color: white;
+    padding: 0vw 1vw;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 5vw;
+    height: 5vw;
+    margin: 0px .5vw;
+    background-color: greenyellow;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h4 {
+    font-weight: 900;
+    font-size: 2vw;
+}
+
+h4 {
+    display: flex;
+}
+
+span {
+    /* color: red; */
+    font-size: .9vw;
+    margin: 0px 5px;
+}
+
+.stripe2 {
+    background-color: orangered;
+    width: 100%;
+    height: 0%;
+    bottom: 0;
+    left: 0%;
+    position: absolute;
+}
